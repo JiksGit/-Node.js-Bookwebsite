@@ -1,0 +1,31 @@
+<h1>장바구니 목록</h1>  
+<table class="table table-sm table-bordered" style="width : 600px">  
+    <tr>
+        <td>사용자id</td>
+        <td>bookid</td>
+        <td>장바구니시간</td>
+        <td>수량</td>
+        <td>구매버튼</td>
+    </tr>
+    <%  
+        var i = 0;  
+        while(i < results.length){  
+    %>  
+    
+        <tr><td class="td td-sm"><%=results[i].custid%></td>  
+            <td><%=results[i].bookid%></td>  
+            <td><%=results[i].cartdate%></td>  
+            <td><%=results[i].qty%></td>  
+            <form action = '/cart_purchase/<%=results[i].bookid%>' method="post">
+            <td><input type="submit" value="구매버튼">
+                <input type="hidden" name="qty" value="<%=results[i].qty%>">
+                <input type="hidden" name="bid" value="<%=results[i].bookid%>">
+                <input type="hidden" name="cartid" value="<%=results[i].cartid%>"></td>
+            </form>
+        </tr>
+    <%
+        i++;
+    }
+    %>
+    
+</table>

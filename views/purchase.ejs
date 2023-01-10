@@ -1,0 +1,36 @@
+<h1>구매 목록</h1>  
+<table class="table table-sm table-bordered" style="width : 1000px">  
+    <tr>
+        <td>사용자</td>
+        <td>bookid</td>
+        <td>구매시간</td>
+        <td>책비용</td>
+        <td>point</td>
+        <td>수량</td>
+        <td>취소</td>
+        <td>환불</td>
+        <td>구매 취소</td>
+        <td>환불 요청</td>
+    </tr>
+    <%  
+        var i = 0;  
+        while(i < results.length){  
+    %>  
+        <tr><td class="td td-sm"><%=results[i].custid%></td>  
+            <td><%=results[i].bookid%></td>  
+            <td><%=results[i].purchasedate%></td>  
+            <td><%=results[i].price%></td>  
+            <td><%=results[i].point%></td>  
+            <td><%=results[i].qty%></td>  
+            <td><%=results[i].cancel%></td>  
+            <td><%=results[i].refund%></td>  
+            <td><a href='/purchase_delete/<%=results[i].purchaseid%>'><input type="button" value="구매 취소"></a></td></td>
+            <td><a href='/purchase_refund/<%=results[i].purchaseid%>'><input type="button" value="환불 요청"></a></td></td>
+        </tr>
+    <%
+        i++;
+    }
+    %>
+    
+    </form>
+</table>

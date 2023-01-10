@@ -1,0 +1,17 @@
+<h1><%=kind%></h1>
+<table class="table">
+    <%  
+        var i = 0;  
+        while(i < results.length){  
+    %>  
+        <tr> 
+            <td><img src="/images/<%=results[i].img%>" style="width:100px;height:100px;"></td> 
+            <td><a href="/book_detail/<%=results[i].Id%>"><%=results[i].name%></a></td> 
+            <td><%=results[i].author%></td> 
+            <td><%=results[i].price%>원</td>
+        </tr>
+    <%
+        i++;
+    }
+    %>
+</table>

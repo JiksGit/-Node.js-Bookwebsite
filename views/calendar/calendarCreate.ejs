@@ -1,0 +1,14 @@
+<h1> 월별계획자료생성 </h1>  
+<% if (kindOfDoc == 'C') { %>  
+<form action="/calendar/create_process" method="post">  
+<% } else {%>  
+<form action="/calendar/update_process/<%=pId%>" method="post">  
+
+<% } %>  
+    <p><input type="text" name="title" value="<%=title%>" style= " width : 400px; border-color:antiquewhite;"placeholder="title"></p>  
+    <p><textarea name="description" placeholder="description" cols="60" style="border-color:antiquewhite;">  
+        <%=description%>  
+    </textarea></p>  
+    <p>by <%=id%></p>  
+    <p><input type="submit"></p>  
+</form>

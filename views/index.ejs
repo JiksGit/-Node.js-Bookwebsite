@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--head 태그 내용은 손대지 마세요 -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body style="padding-top:90px;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <span class="navbar-brand mx-5 mb-0 font-weight-bold font-italic">Nodejs 서점</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--1. 사용자가 일반회원이거나 로그인 전의 메뉴-->
+            <% if (cls != 'A') { %>
+                
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item mx-1 btn btn-primary">
+                    <a class="nav-link text-white" href="/">Home</a></li>
+                <li class="nav-item mx-1 btn btn-primary">
+                    <a class="nav-link text-white" href="/book/best">BEST</a></li>
+                <li class="nav-item mx-1 btn btn-primary">
+                    <a class="nav-link text-white" href="/book/month">MonBook</a></li>
+                <li class="nav-item mx-1 btn btn-primary">
+                    <a class="nav-link text-white" href="/book/ebook">eBook</a></li>
+                <li class="nav-item mx-1 btn btn-primary">
+                    <a class="nav-link text-white" href="#">cart</a></li>
+                <li class="nav-item mx-1 btn btn-primary">
+                    <a class="nav-link text-white" href="#">Order</a></li>
+                <li class="nav-item mx-1 btn btn-primary">
+                    <a class="nav-link text-white" href="/board/list/1">Board</a></li>
+                <li class="nav-item dropdown mx-1 btn btn-primary">
+                    <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">Util</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/book/search">Book Search</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2" action="" method="post"> 
+                <input class="form-control mr-sm-2" type="search" placeholder="global search" name="search_word">
+                <input class="btn btn-primary" type="submit" value="검색">
+            </form>
+            <!--1. 사용자가 일반회원이거나 로그인 전의 메뉴의 마지막 -->
+            <% } else { %>
+            <!--2. 관리자로 로그인 했을 때의 화면 -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item mx-1 btn btn-primary">
+                    <a class="nav-link text-white" href="/">Home</a></li>
+                <li class="nav-item mx-1 btn btn-primary">
+                    <a class="nav-link text-white" href="/booklist/1">Book</a></li>
+                <li class="nav-item mx-1 btn btn-primary">
+                    <a class="nav-link text-white" href="/user">User</a></li>
+                <li class="nav-item mx-1 btn btn-primary">
+                    <a class="nav-link text-white" href="/namecard">NameCard</a></li>
+                <li class="nav-item mx-1 btn btn-primary">
+                    <a class="nav-link text-white" href="/calendar">Calendar</a></li>
+                <li class="nav-item mx-1 btn btn-primary">
+                    <a class="nav-link text-white" href="/board/list/1">Board</a></li>
+                <li class="nav-item mx-1 btn btn-primary">
+                    <a class="nav-link text-white" href="/purchase">Order</a></li>
+                <li class="nav-item dropdown mx-1 btn btn-primary">
+                    <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">Add</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/book/create">Book</a>
+                        <a class="dropdown-item" href="/user/create">User</a>
+                        <a class="dropdown-item" href="/board/create">Board</a>
+                        <a class="dropdown-item" href="/purchase">Order</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/namecard/create">NameCard</a>
+                        <a class="dropdown-item" href="/calendar/create">Calendar</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown mx-1 btn btn-primary">
+                    <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">Change</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/book/update/1">Book</a>
+                        <a class="dropdown-item" href="/user/list">User</a>
+                        <a class="dropdown-item" href="/board/list/1">Board</a>
+                        <a class="dropdown-item" href="/purchase">Order</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/namecard/list">Namecard</a>
+                        <a class="dropdown-item" href="/calendar/list">Calendar</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown mx-1 btn btn-primary">
+                    <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">Util</a>
+                    <div class="dropdown-menu">
+                        
+                        <a class="dropdown-item" href="/book/search">Book Search</a>
+                        <a class="dropdown-item" href="/namecard/namecardsearch">NameCard Search</a>
+                        <a class="dropdown-item" href="/calendar/calendarsearch">Calendar Search</a>
+                    </div>
+                </li>
+            </ul>
+            <!--2. 관리자로 로그인 했을 때의 화면의 마지막  -->
+            <% } %>
+            <!--3. 로그인 메뉴 부분 -->
+            <ul class="navbar-nav ml-5 mr-5">
+                <li class="nav-item dropdown mx-1 btn btn-primary">
+                    <% if(loggined === true) { %>
+                    <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+                        <i class="fas fa-user"><%=id%></i></a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                        <a class="dropdown-item" href="/password/update/<%=id%>">Change Password</a>
+                    </div>
+                    <% } else { %>
+                    <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+                        <i class="fas fa-user"></i>&ensp;Anonymous&ensp;</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/login">Login</a>
+                        <a class="dropdown-item" href="/register">Register</a>
+                    </div>
+                    <% } %>
+                </li>
+            </ul>
+            <!--3. 로그인 메뉴 부분 끝 -->
+        </div>
+    </nav>
+    
+    
+    <div class="container">
+
+        <%- include(doc)%>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/c998a172fe.js"></script>
+    
+</body>
+</html>
+    

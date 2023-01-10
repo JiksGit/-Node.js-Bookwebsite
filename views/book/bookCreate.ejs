@@ -1,0 +1,22 @@
+<h1> Book생성 </h1>  
+<% if (kindOfDoc == 'C') { %>  
+<form action="/book/create_process" method="post">  
+<% } else {%>  
+<form action="/book/update_process/<%=bId%>" method="post">  
+
+<% } %>  
+    <p><input type="text" name="name" value="<%=name%>" style= " width : 400px; border-color:antiquewhite;"placeholder="name"></p>   
+    <p><input type="text" name="publisher" value="<%=publisher%>" style= " width : 400px; border-color:antiquewhite;"placeholder="publisher"></p> 
+    <p><input type="text" name="author" value="<%=author%>" style= " width : 400px; border-color:antiquewhite;"placeholder="author"></p> 
+    <p><input type="text" name="stock" value="<%=stock%>" style= " width : 400px; border-color:antiquewhite;"placeholder="stock"></p> 
+    <p><input type="text" name="pubdate" value="<%=pubdate%>" style= " width : 400px; border-color:antiquewhite;"placeholder="pubdate"></p> 
+    <p><input type="text" name="pagenum" value="<%=pagenum%>" style= " width : 400px; border-color:antiquewhite;"placeholder="pagenum"></p> 
+    <p><input type="text" name="ISBN" value="<%=ISBN%>" style= " width : 400px; border-color:antiquewhite;"placeholder="ISBN"></p> 
+    <p><input type="text" name="ebook" value="<%=ebook%>" style= " width : 400px; border-color:antiquewhite;"placeholder="ebook"></p> 
+    <p><input type="text" name="kdc" value="<%=kdc%>" style= " width : 400px; border-color:antiquewhite;"placeholder="kdc"></p> 
+    <p><input type="text" name="img" value="<%=img%>" style= " width : 400px; border-color:antiquewhite;"placeholder="img"></p> 
+    <p><input type="text" name="price" value="<%=price%>" style= " width : 400px; border-color:antiquewhite;"placeholder="price"></p> 
+    <p><input type="text" name="nation" value="<%=nation%>" style= " width : 400px; border-color:antiquewhite;"placeholder="nation"></p> 
+    <p><input type="text" name="description" value="<%=description%>" style= " width : 400px; border-color:antiquewhite;"placeholder="description"></p>   
+    <p><input type="submit"></p>  
+</form>

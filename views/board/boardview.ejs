@@ -1,0 +1,17 @@
+
+    <h1><%=kind%>  </h1>
+    <div style = "text-align: right;width : 1100px;">
+         <a href="/board/list/<%=pageNum%>"><input type="button" value="목록"></a>
+    </div>
+    <table class="table">
+        <tr><td style="width : 150px;">제목 : &nbsp;</td><td><%=board[0].title%></td></tr>
+        <tr><td style="width : 150px;">작성자 : &nbsp;</td><td><%=board[0].name%></td></tr>
+        <tr><td colspan = "2" ><%=board[0].content%></td></tr>
+    </table>
+    <div style = "text-align: right;width : 1100px;">
+    <% if(loggined === true && (id == board[0].loginid || cls =='A') ){ %>
+        <a href="/board/update/<%=board[0].boardid%>/<%=pageNum%>"><input type="button" value="수정"></a>
+        <a href="/board/delete/<%=board[0].boardid%>/<%=pageNum%>" onclick="return confirm('삭제 하시겠습니까?')"><input type="button" value="삭제"></a>
+    <% } %>
+    </div>
+   

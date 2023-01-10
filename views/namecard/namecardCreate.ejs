@@ -1,0 +1,14 @@
+<h1> 네임카드 생성 </h1>  
+<% if (kindOfDoc == 'C') { %>  
+<form action="/namecard/create_process" method="post">  
+<% } else {%>  
+<form action="/namecard/update_process/<%=pId%>" method="post">  
+
+<% } %>  
+    <p><input type="text" name="name" value="<%=name%>" style= " width : 400px; border-color:antiquewhite;"placeholder="name"></p>   
+    <p><input type="text" name="gender" value="<%=gender%>" style= " width : 400px; border-color:antiquewhite;"placeholder="gender"></p> 
+    <p><input type="text" name="age" value="<%=age%>" style= " width : 400px; border-color:antiquewhite;"placeholder="age"></p> 
+    <p><input type="text" name="address" value="<%=address%>" style= " width : 400px; border-color:antiquewhite;"placeholder="address"></p> 
+    <p>by <%=id%></p>  
+    <p><input type="submit"></p>  
+</form>

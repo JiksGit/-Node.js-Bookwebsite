@@ -1,0 +1,22 @@
+<% if (kind == 'C') {%>
+    <h1>게시물 작성  </h1>
+    <form action="/board/create_process" method="post">
+<% }else { %>
+    <h1>게시물 수정  </h1>
+    <form action="/board/update_process" method="post">
+<% }%>
+        <table class="table">
+            <tr><td style="width : 150px;">제목 : &nbsp;</td><td><input type="text" name="title" value="<%=title%>" style="width : 800px;"></td></tr>
+            <tr><td style="width : 150px;">작성자 : &nbsp;</td><td><input type="text" name = "nm" value="<%=name%>" disabled ></td></tr>
+            <tr><td colspan = "2" ><textarea name="content" cols="127" rows="15"><%=content%></textarea></td></tr>
+        </table>
+        <div style = "text-align: right;width : 1100px;">
+            <input type="submit" value="저장">
+            <input type="hidden" name = "id" value="<%=id%>" >
+            <input type="hidden" name = "boardid" value="<%=boardid%>" >
+            <input type="hidden" name = "nmh" value="<%=name%>" >
+            <input type="hidden" name = "pNum" value="<%=pNum%>" >
+            
+        </div>
+    </form>
+   

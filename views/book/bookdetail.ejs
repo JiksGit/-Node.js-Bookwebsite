@@ -1,0 +1,27 @@
+
+<h1>    </h1>
+<form>
+<table class="table">
+    <tr><td colspan="2"><img src="/images/<%=img%>" style="width: 200px;height:300px; "></td></tr>
+    <tr><td><%=name%> </td><td>저자 : <%=author%></td></tr>
+    <tr><td><%=price%>원</td>
+        <%  
+        if ( logY === true ) {
+        %>
+        <td >수량 : <input type="text" name="qty"></td></tr>
+        <% } %>
+        <input type="hidden" name="bookId" value="<%=Id%>">
+        <input type="hidden" name="price" value="<%=price%>">
+        <tr>
+        <td>
+                <button type="submit" formaction = "/book/cart"  formmethod="post" >장바구니</button>
+        </td>
+        <td>
+                <button type="submit" formaction = "/book/purchase" formmethod="post">구매</button>
+        </td>
+    </tr>
+    
+</table>
+
+</form>
+

@@ -1,0 +1,18 @@
+<h1> 사용자 생성 </h1>  
+<% if (kindOfDoc == 'C') { %>  
+<form action="/user/create_process" method="post">  
+<% } else {%>  
+<form action="/user/update_process/<%=pId%>" method="post">  
+
+<% } %>  
+    <p><input type="text" name="loginid" value="<%=loginid%>" style= " width : 400px; border-color:antiquewhite;"placeholder="loginid"></p>  
+    <p><input type="text" name="password" value="<%=password%>" style= " width : 400px; border-color:antiquewhite;"placeholder="password"></p>  
+    <p><input type="text" name="name" value="<%=name%>" style= " width : 400px; border-color:antiquewhite;"placeholder="name"></p> 
+    <p><input type="text" name="address" value="<%=address%>" style= " width : 400px; border-color:antiquewhite;"placeholder="address"></p> 
+    <p><input type="text" name="tel" value="<%=tel%>" style= " width : 400px; border-color:antiquewhite;"placeholder="tel"></p> 
+    <p><input type="text" name="birth" value="<%=birth%>" style= " width : 400px; border-color:antiquewhite;"placeholder="birth"></p> 
+    <p><input type="text" name="class2" value="<%=class2%>" style= " width : 400px; border-color:antiquewhite;"placeholder="class"></p> 
+    <p><input type="text" name="grade" value="<%=grade%>" style= " width : 400px; border-color:antiquewhite;"placeholder="grade"></p> 
+    <p>by <%=id%></p>  
+    <p><input type="submit"></p>  
+</form>

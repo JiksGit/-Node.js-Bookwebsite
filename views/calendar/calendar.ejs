@@ -1,0 +1,15 @@
+<h1> 월별 계획 </h1>
+<table class="table table-sm table-bordered" style="width : 600px">
+    <%
+        var i =0;
+
+        while(i < results.length) {
+    %>
+        <tr><td class="td td-sm"><%=results[i].title%></td>
+            <td><%=results[i].description%></td>
+        </tr>
+    <%
+        i++;
+    }
+    %>
+</table> 

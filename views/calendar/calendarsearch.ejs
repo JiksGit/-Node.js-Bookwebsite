@@ -1,0 +1,30 @@
+
+    <h1>캘린더 검색화면 </h1>
+
+    <form action="/calendar/calendarsearch" method="post">
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-2  col-form-label"><%=kind%></label>
+          <div class="col-sm-5">
+            <input type="id" class="form-control" placeholder="캘린더 제목을 입력하세요" name="keyword" maxlength="50">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">검색</button>
+    </form>
+    <p>
+      <% if (listyn == "Y")
+        {    
+      %>
+            <table class="table">
+      <%    var i = 0;
+            while(i < bs.length) {
+      %>
+              <tr><td><%=bs[i].title%></td><td><%=bs[i].description%></td><td><%=bs[i].created%></td><td><%=bs[i].author_id%></td>
+              </tr>
+      <% 
+          i++; 
+        }  
+      %>
+          </table>
+      <%
+        } %>
+    </p>

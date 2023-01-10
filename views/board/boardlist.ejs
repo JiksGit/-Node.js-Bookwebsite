@@ -1,0 +1,30 @@
+
+    <h1><%=kind%>  </h1>
+    <div style = "text-align: right;width : 1100px;">
+       <% if(loggined === true) { %>
+        <a href='/board/create'><input type="button" value="글쓰기"></a>
+       <%}%>
+    </div>
+    <table class="table">
+      <%  var i = 0;
+          while(i < board.length) {
+      %>
+            <tr><td><%=board[i].name%></td>
+                <td><a href='/board/view/<%=board[i].boardid%>/<%=pageNum%>'><%=board[i].title%></a></td>
+                <td><%=board[i].date%></td>
+            </tr>
+      <% 
+             i++; 
+          }  
+      %>
+    </table>
+
+    <%  var j = 1;
+        while (j <= totalpages) { 
+            if(j == pageNum){ %>
+                <span style="font-weight : bold;"><%=j%></span> &nbsp;&nbsp;
+            <% } else { %>
+                <span><a href="/board/list/<%=j%>"><%=j%></a></span> &nbsp;&nbsp;
+     <%     } 
+            j++ 
+        } %>
