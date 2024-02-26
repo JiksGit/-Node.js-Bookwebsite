@@ -1,6 +1,15 @@
 # Node.js를 활용한 Book 서점 웹사이트 개발
 Node.js 웹 DB 개발에 대한 학습
 
+### 주요 서비스
+
+1. 책 리스트 나열
+2. 장바구니 기능 
+3. 책 구매 기능
+4. 게시글 작성 기능
+5. 책 리스트 생성 기능
+6. 사용자 관리 기능
+
 <img width="1440" alt="스크린샷 2023-11-20 오후 5 05 07" src="https://github.com/JiksGit/Node.js-Bookweb-/assets/96871403/f468f7e4-cbbe-4dd4-b623-01e101a50692">
 
 <img width="1440" alt="스크린샷 2023-11-20 오후 5 12 52" src="https://github.com/JiksGit/Node.js-Bookweb-/assets/96871403/25476d75-d99a-4e0b-bc4d-2b7320272e50">
